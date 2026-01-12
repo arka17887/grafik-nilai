@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Nilai Semester</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- SLIDE 1 -->
+<div class="slide active slide1">
+  <h2>Data Siswa</h2>
+
+  <input type="text" id="nama" placeholder="Nama">
+  <input type="text" id="kelas" placeholder="Kelas">
+  <input type="number" id="absen" placeholder="No Absen">
+
+  <button class="btn-next" onclick="nextSlide()">Lanjut</button>
+</div>
+
+<!-- SLIDE 2 -->
+<div class="slide slide2">
+  <h3 id="identitas"></h3>
+  <h2>Rata-rata Nilai Semester</h2>
+
+  <canvas id="grafikNilai"></canvas>
+
+  <div class="input-nilai">
+    <input type="number" id="sem1" placeholder="Semester 1" oninput="updateNilai()">
+    <input type="number" id="sem2" placeholder="Semester 2" oninput="updateNilai()">
+    <input type="number" id="sem3" placeholder="Semester 3" oninput="updateNilai()">
+    <input type="number" id="sem4" placeholder="Semester 4" oninput="updateNilai()">
+    <input type="number" id="sem5" placeholder="Semester 5" oninput="updateNilai()">
+  </div>
+
+  <h3>Rata-rata: <span id="rataRata">0</span></h3>
+
+  <button class="btn-next" onclick="nextSlide()">Lanjut ke Mapel</button>
+</div>
+
+<!-- SLIDE 3 -->
+<div class="slide slide3">
+  <h2>Pilih Mata Pelajaran</h2>
+  <p>Disarankan memilih <b>4 mata pelajaran</b></p>
+
+  <div class="mapel">
+    <label><input type="checkbox" value="Ekonomi"> Ekonomi</label>
+    <label><input type="checkbox" value="Fisika"> Fisika</label>
+    <label><input type="checkbox" value="Sosiologi"> Sosiologi</label>
+    <label><input type="checkbox" value="Biologi"> Biologi</label>
+    <label><input type="checkbox" value="Kimia"> Kimia</label>
+    <label><input type="checkbox" value="Matematika Lanjut"> Matematika Lanjut</label>
+    <label><input type="checkbox" value="Informatika"> Informatika</label>
+    <label><input type="checkbox" value="Geografi"> Geografi</label>
+  </div>
+
+  <button class="btn-next" onclick="keSlide4()">Lanjut</button>
+</div>
+
+<!-- SLIDE 4 -->
+<div class="slide slide4">
+  <h2>Input Nilai Mata Pelajaran</h2>
+  <div id="nilaiMapel"></div>
+
+  <button class="btn-next" onclick="keSlide5()">Lihat Grafik</button>
+</div>
+
+<!-- SLIDE 5 -->
+<div class="slide slide5">
+  <h2>Grafik Mata Pelajaran</h2>
+  <div id="grafikMapelContainer"></div>
+
+  <button class="btn-next">Selesai</button>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
